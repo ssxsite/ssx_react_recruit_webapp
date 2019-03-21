@@ -19,6 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 9.后续可以再执行git push
 
+
 ##create-react-app构建项目遇到的坑：
 1.保证网络：公司网络有自己的npm镜像，安装不了，于是改用自己手机的热点，就可以了。
 
@@ -47,6 +48,9 @@ npm install --save react-redux
 后端使用node.js Express实现服务器，mongodb实现数据库等。
 
 - 项目主体功能：注册->登录-完善信息->牛人与BOss列表->聊天列表->聊天->个人中心
+
+
+
 
 ## 使用技术栈
 - 前端
