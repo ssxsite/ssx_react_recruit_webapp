@@ -1,68 +1,114 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 项目构建（使用create-react-app 脚手架构建，并修改部分webapck配置）
+1.npm i create-react-app -g
 
-In the project directory, you can run:
+2.create-react-app ssx_react_recruit_webapp
 
-### `npm start`
+3.cd ssx_react_recruit_webapp
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4.git init
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+5.git add .
 
-### `npm test`
+6.git commit -m 'Saving before ejecting'
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7.npm run eject (开放react 封装的webpack 配置文件，以便修改)
 
-### `npm run build`
+8.npm start
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+9.后续可以再执行git push
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+##create-react-app构建项目遇到的坑：
+1.保证网络：公司网络有自己的npm镜像，安装不了，于是改用自己手机的热点，就可以了。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.npm run eject执行之前需要先把文件git commit一下，否则会报错。注意要保持网络没问题，再执行这个命令
 
-### `npm run eject`
+3.一定按照上面的顺序来创建项目，否则有错
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 项目依赖包安装
+1.React Redux （https://www.redux.org.cn/docs/basics/UsageWithReact.html）
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install --save react-redux
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2.React Redux （https://www.redux.org.cn/docs/basics/UsageWithReact.html）
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+npm install --save react-redux
 
-## Learn More
+3.React Redux （https://www.redux.org.cn/docs/basics/UsageWithReact.html）
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install --save react-redux
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## 项目介绍
 
-### Analyzing the Bundle Size
+- 项目是一个招聘类实时聊天功能webapp，前端使用react框架，redux做状态管理，react-router实现路由，axios异步请求，语言ES6，antd-mobile作为快速页面实现的组件库等；
+后端使用node.js Express实现服务器，mongodb实现数据库等。
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- 项目主体功能：注册->登录-完善信息->牛人与BOss列表->聊天列表->聊天->个人中心
 
-### Making a Progressive Web App
+## 使用技术栈
+- 前端
+react16
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+  redux
 
-### Advanced Configuration
+  react-redux
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  redux-thunk
 
-### Deployment
+  react-router4
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+  prop-types
 
-### `npm run build` fails to minify
+  axios
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  browser-cookies
+
+  antd-mobile
+
+- 后端
+  node
+  express
+  mongoose
+  utility
+  cookie-parser
+  body-parser
+
+## 项目目录
+    .
+    ├── README.md
+    ├── config               // 开发环境的配置
+    ├── public
+    │   ├── index.html       // 项目页面入口文件
+    ├── package.json         // 项目配置文件
+    ├── scripts              // npm scrips 命令配置
+    ├── server               // 后端配置
+    │   ├── server.js        // 服务启动文件
+    │   ├── model.js         // 数据库配置
+    │   ├── user.js          // 接口配置
+    ├── src
+    │   ├── static           // 公用资源
+    │   ├── components       // 所有组件
+    │   ├── container        // 所有页面
+    │   ├── redux            // redux管理
+    │   ├── http.js	         // axios配置
+    │   ├── index.js         // 入口文件
+    │   ├── util.js          // 功能函数封装
+    │   └── reducer.js       // 所有reducer合并
+## 运行项目
+- 环境依赖
+  项目运行前须要安装NodeJs&MongoDB，Mongo端口为27017，express服务器端口9093，访问地址为：localhost
+- 运行项目
+  首先需要使用命令行工具CD到根目录，按顺序执行如下命令
+
+  第一个窗口用于拉取依赖&启动服务器
+  npm install //拉取依赖
+  node server/server.js //启动服务
+
+  第二个窗口用于启动MongoDB
+  全局直接执行命令 Mongo
+
+  第三个窗口用于启动项目
+  npm run start
